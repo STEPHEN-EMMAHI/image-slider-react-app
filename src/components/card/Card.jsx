@@ -27,10 +27,24 @@ export default function Card() {
 
   return (
     <div className="w-full flex items-center justify-center">
-      <Button onClick={handlePreviousCard}>Previous</Button>
-      <div className="w-[50%] max-w-3xl overflow-hidden m-4">
+      <Button onClick={handlePreviousCard}>
+        <svg
+          aria-hidden="true"
+          width="48"
+          height="48"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+      </Button>
+      <div className="w-[50%] md:w-[30%] max-w-3xl overflow-hidden m-4">
         <ul
-          className="card-ul flex md:gap-4 transition-transform duration-300 ease-in-out"
+          className="flex transition-transform duration-300 ease-in-out"
           style={{ transform: `translateX(-${currentCardIndex * 100}%)` }}
         >
           {data.map((profile) => (
@@ -43,7 +57,21 @@ export default function Card() {
           ))}
         </ul>
       </div>
-      <Button onClick={handleNextCard}>Next</Button>
+      <Button onClick={handleNextCard}>
+        <svg
+          aria-hidden="true"
+          width="48"
+          height="48"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="m9 18 6-6-6-6" />
+        </svg>
+      </Button>
     </div>
   );
 }
@@ -51,7 +79,7 @@ export default function Card() {
 function Profile({ name, img, role }) {
   return (
     <li
-      className={`w-full md:w-[calc(50%-12px)] flex flex-shrink-0 flex-col items-center gap-4 border p-4 rounded-2xl`}
+      className={`w-full flex flex-shrink-0 flex-col items-center gap-4 border p-4 rounded-2xl`}
     >
       <img
         src={img}
