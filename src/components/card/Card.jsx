@@ -27,7 +27,7 @@ export default function Card() {
 
   return (
     <div className="w-full flex items-center justify-center">
-      <Button onClick={handlePreviousCard}>
+      <Button onClick={handlePreviousCard} className={`cursor-pointer`}>
         <svg
           aria-hidden="true"
           width="48"
@@ -57,7 +57,7 @@ export default function Card() {
           ))}
         </ul>
       </div>
-      <Button onClick={handleNextCard}>
+      <Button onClick={handleNextCard} className={`cursor-pointer`}>
         <svg
           aria-hidden="true"
           width="48"
@@ -90,7 +90,9 @@ function Profile({ name, img, role }) {
         <p>{name}</p>
         <p>{role}</p>
       </div>
-      <Button className={`bg-blue-900 text-white px-3.5 py-2.5 rounded-2xl`}>
+      <Button
+        className={`bg-blue-900 text-white px-3.5 py-2.5 rounded-2xl cursor-pointer`}
+      >
         Message
       </Button>
     </li>
